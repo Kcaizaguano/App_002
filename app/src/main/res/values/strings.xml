@@ -1,0 +1,22 @@
+<resources>
+    <string name="app_name">App_002</string>
+    <string name="txt_hint_primerValor">Ingrese la base</string>
+    <string name="txt_hint_segundoValor">Ingrese el exponente</string>
+    <string name="txt_hint_resultado">Resultado</string>
+    <string name="btn_potencia">Potencia</string>
+    <string name="btn_Salir">Salir</string>
+
+
+    <string name="txt_hint_usuario">Digite el Usuario</string>
+    <string name="txt_hint_clave">Digite la Clave</string>
+    <string name="btn_Ingresar">Ingresar</string>
+    <string name="btn_Mosxtrar_Activitie">Monstrar Activitie</string>
+
+    <string name="btn_Llamar">Llamar</string>
+    <string name="btn_navegador">Mostrar navegador</string>
+
+    <string name="btn_final_app">Finalizar</string>
+
+
+
+</resources>

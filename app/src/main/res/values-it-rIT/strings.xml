@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">App_002</string>
+    <string name="txt_hint_primerValor">entra in base</string>
+    <string name="txt_hint_segundoValor">Ingrese el exponente</string>
+    <string name="txt_hint_resultado">Risultato</string>
+    <string name="btn_potencia">Potenza/</string>
+    <string name="btn_Salir">Esci</string>
+
+
+    <string name="txt_hint_usuario">Inserisci l"'"utente</string>
+    <string name="txt_hint_clave">Inserisci la password</string>
+    <string name="btn_Ingresar">Entrare dentro</string>
+    <string name="btn_Mosxtrar_Activitie">Mostra attività</string>
+
+    <string name="btn_Llamar">Llamar</string>
+    <string name="btn_navegador">Mostrar navegador</string>
+    <string name="btn_final_app">Finalizar</string>
+
+</resources>
