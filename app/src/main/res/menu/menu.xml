@@ -8,9 +8,45 @@
 
         android:title="@string/menu_archivo"
         app:showAsAction="always" />
+
+
+
+
+    <item android:title="@string/menu_editar"
+        android:id="@+id/menu_editar"
+        app:showAsAction="ifRoom">
+
+        <menu>
+
+            <group>
+                <item android:title="@string/menu_cortar"
+                    android:id="@+id/menu_cortar"
+                    app:showAsAction="ifRoom">
+                </item>
+
+
+                <item android:title="@string/menu_copiar"
+                    android:id="@+id/menu_copiar"
+                    app:showAsAction="ifRoom">
+                </item>
+
+
+                <item android:title="@string/menu_pegar"
+                    android:id="@+id/menu_pegar"
+                    app:showAsAction="ifRoom">
+                </item>
+
+            </group>
+        </menu>
+    </item>
+
+
     <item
         android:id="@+id/menu_acerca_de"
         android:icon="@android:drawable/ic_dialog_alert"
         android:title="@string/menu_acercade"
         app:showAsAction="ifRoom" />
+    <item
+        android:id="@+id/menu_agregar"
+        android:title="@string/menu_agregar" />
 </menu>

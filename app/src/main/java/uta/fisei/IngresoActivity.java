@@ -1,10 +1,12 @@
 package uta.fisei;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.Menu;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.Toast;
@@ -59,8 +61,32 @@ public class IngresoActivity extends AppCompatActivity {
         //inflar menu con al informacion del menu diseñado
         this.getMenuInflater().inflate(R.menu.menu, menu);
         return super.onCreateOptionsMenu(menu);
-
         //return true
+    }
 
+
+    //PARA VER EL CLICk EN ALGUNA OPCION DEL MENU
+    @Override
+    public boolean onOptionsItemSelected(@NonNull MenuItem item) {
+
+        //obtener el id del item donde el usuario presiono
+        int id = item.getItemId();
+
+        if (id == R.id.menu_archivo)
+        {
+            Toast.makeText(this, "Presiono un archivo", Toast.LENGTH_SHORT).show();
+        }
+
+        if (id == R.id.menu_acerca_de)
+        {
+            Toast.makeText(this, "Presiono acerca de ", Toast.LENGTH_SHORT).show();
+        }
+
+        if (id == R.id.menu_agregar)
+        {
+            Toast.makeText(this, "Presiono agregar ", Toast.LENGTH_SHORT).show();
+        }
+
+        return super.onOptionsItemSelected(item);
     }
 }

@@ -21,6 +21,13 @@
     <string name="menu_archivo">Archivo</string>
     <string name="menu_acercade">Acerca de</string>
 
+    <string name="menu_editar">Editar</string>
+    <string name="menu_cortar">Cortar</string>
+    <string name="menu_copiar">Copiar</string>
+    <string name="menu_pegar">Pegar</string>
+
+
+
 
 
 </resources>
