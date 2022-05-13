@@ -4,6 +4,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.Menu;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.Toast;
@@ -49,7 +50,17 @@ public class IngresoActivity extends AppCompatActivity {
         intent.addCategory(Intent.CATEGORY_HOME);
         intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
         startActivity(intent);
+    }
 
+    //ASOCIAR EL MENU AL ACTIVITY
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+
+        //inflar menu con al informacion del menu diseñado
+        this.getMenuInflater().inflate(R.menu.menu, menu);
+        return super.onCreateOptionsMenu(menu);
+
+        //return true
 
     }
 }
