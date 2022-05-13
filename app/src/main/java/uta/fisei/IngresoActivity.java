@@ -87,6 +87,13 @@ public class IngresoActivity extends AppCompatActivity {
             Toast.makeText(this, "Presiono agregar ", Toast.LENGTH_SHORT).show();
         }
 
+        if (id == R.id.menu_copiar)
+        {
+            Toast.makeText(this, "Presiono copiar ", Toast.LENGTH_SHORT).show();
+        }
+
+
+
         return super.onOptionsItemSelected(item);
     }
 }
