@@ -1,18 +1,48 @@
 package uta.fisei;
 
+import androidx.activity.result.ActivityResult;
+import androidx.activity.result.ActivityResultCallback;
+import androidx.activity.result.ActivityResultLauncher;
+import androidx.activity.result.contract.ActivityResultContracts;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.app.Activity;
 import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.TextView;
+import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity {
 
      EditText editTextPrimerValor, editTextSegundoValor, editTextResultado;
      Button btn_potencia, btn_salir;
+     TextView textViewDatos;
+
+
+     //OBTENER LOS DATOS  ENVIADOS AL CERRAR LA ACTIVIDAD (DESDE ATRAS-ADELANTE )
+    ActivityResultLauncher<Intent>  activityResult =
+             registerForActivityResult(new ActivityResultContracts.StartActivityForResult(), new ActivityResultCallback<ActivityResult>() {
+                 @Override
+                 public void onActivityResult(ActivityResult result) {
+
+                     //procesasr los datos
+                     if (result.getResultCode() == Activity.RESULT_OK)
+                     {
+                         //obtener los datos regresados
+                         Intent data = result.getData();
+                         //Toast.makeText(MainActivity.this, "Datos regresados" + data.getDataString(), Toast.LENGTH_LONG).show();
+
+                        textViewDatos.setText(data.getDataString());
+
+                     }
+                 }
+             });
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -22,6 +52,7 @@ public class MainActivity extends AppCompatActivity {
         editTextResultado = findViewById(R.id.editTextResultado);
         btn_potencia = findViewById(R.id.buttonPotencia);
         btn_salir = findViewById(R.id.buttonSalir);
+        textViewDatos = findViewById(R.id.textViewDatos);
 
         //Manejador para el evento click del boton
         btn_potencia.setOnClickListener(new View.OnClickListener() {
@@ -86,9 +117,9 @@ public class MainActivity extends AppCompatActivity {
 
         Intent intent = new Intent(this, TercerActivity.class);
 
-        //Pasar los parametros
-
-        this.startActivity(intent);
+        //this.startActivity(intent);
+        //utilizar actividades que  van aregresar datos
+        activityResult.launch(intent);
     }
 
 
@@ -111,15 +142,12 @@ public class MainActivity extends AppCompatActivity {
 
     public void finalizarApp(View view){
 
-
         Intent intent = new Intent(Intent.ACTION_MAIN);
         intent.addCategory(Intent.CATEGORY_HOME);
         intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
         startActivity(intent);
-
-
-
-
     }
+
+
 
 }

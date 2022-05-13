@@ -1,7 +1,11 @@
 package uta.fisei;
 
+import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.app.Activity;
+import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.AdapterView;
@@ -35,16 +39,24 @@ public class TercerActivity extends AppCompatActivity {
 
                 //REALIZAR EL CASTING  PARA OBTENER EL DATO
                 String itemSelected = (String) listViewDatos.getAdapter().getItem(i);
-                Toast.makeText(TercerActivity.this, itemSelected, Toast.LENGTH_LONG).show();
+
+                //Toast.makeText(TercerActivity.this, itemSelected, Toast.LENGTH_LONG).show();
+
+                //PASAR DATOS HACIA ATRAS DE LA ACTIVIDAD
+                Intent intent = new Intent();
+                intent.setData(Uri.parse(itemSelected));
+                setResult(Activity.RESULT_OK, intent); // dar mensaje al momento de cerrar la ventana y pasar le dato
 
                 finish();
-               //System.exit(0);
+
             }
         });
     }
 
+        //metodo para llenar la lista
 
     public List<String> cargarDatosListView() {
+
         List<String> list = new ArrayList<String>();
 
         for (int i =1; i<=20 ; i++) {
@@ -53,7 +65,9 @@ public class TercerActivity extends AppCompatActivity {
         }
 
         return  list;
-
     }
+
+
+
 
 }
