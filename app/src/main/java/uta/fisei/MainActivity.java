@@ -133,7 +133,6 @@ public class MainActivity extends AppCompatActivity {
 
     public void onCLickNavegador(View view){
 
-
         Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse("http://google.com"));
         startActivity(intent);
 

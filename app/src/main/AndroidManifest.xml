@@ -10,12 +10,14 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.App_002">
         <activity
+            android:name=".ClientesActivity"
+            android:exported="false" />
+        <activity
             android:name=".TercerActivity"
             android:exported="false" />
         <activity
             android:name=".MainActivity"
-            android:exported="false"
-            />
+            android:exported="false" />
         <activity
             android:name=".IngresoActivity"
             android:exported="true">
