@@ -25,4 +25,15 @@
     <string name="menu_copiar">Copiar</string>
     <string name="menu_pegar">Pegar</string>
 
+    <string name="txt_codigo">Ingrese el codigo</string>
+    <string name="txt_nombre">Ingrese el nombre</string>
+    <string name="txt_apellido">Ingrese el apellido</string>
+    <string name="txt_saldo">Ingrese el saldo</string>
+
+    <string name="btn_Insertar">Insertar</string>
+    <string name="btn_Borrar">Borrar</string>
+    <string name="btn_Modificar">Modificar</string>
+    <string name="btn_Buscar">Buscar</string>
+    <string name="btn_Mostrar_Clientes">Mostrar Clientes</string>
+
 </resources>

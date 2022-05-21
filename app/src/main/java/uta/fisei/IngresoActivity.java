@@ -32,7 +32,7 @@ public class IngresoActivity extends AppCompatActivity {
 
         if (usuario.equals("admin") && clave.equals("admin")){
             //mostrar un activity
-            Intent intent = new Intent(this,MainActivity.class);
+            Intent intent = new Intent(this,ClientesActivity.class);
 
             //pasar parametros
 

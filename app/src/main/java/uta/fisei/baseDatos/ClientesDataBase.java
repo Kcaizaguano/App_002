@@ -10,7 +10,7 @@ public class ClientesDataBase extends SQLiteOpenHelper {
 
 
     private String CREATE_TABLE_CLIENTES = "CREATE TABLE Clientes (" +
-            "Codigo INT PRIMARY KEY AUTOINCREMENT," +
+            "Codigo INTEGER PRIMARY KEY AUTOINCREMENT," +
             "Nombre TEXT, " +
             "Apellido TEXT," +
             "Saldo REAL)";
