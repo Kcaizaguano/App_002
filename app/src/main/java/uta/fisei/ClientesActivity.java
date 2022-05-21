@@ -3,6 +3,7 @@ package uta.fisei;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.ContentValues;
+import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
 import android.view.View;
@@ -104,6 +105,35 @@ public class ClientesActivity extends AppCompatActivity {
 
         //abrir la base de datos en modo lectura(SELECT )
         SQLiteDatabase sql = clientesDataBase.getReadableDatabase();
+
+        //obtener el codigo del cliente
+        String codigo = editTextCodigo.getText().toString();
+
+       // String SELECT  = "SELECT * FROM  Clientes WHERE Codigo='"+codigo+"'";
+        String SELECT  = "SELECT * FROM  Clientes WHERE Codigo=" + codigo;
+        //select Codigo (0), Nombre (1), Apellido (2), Saldo (3)
+
+        //String SELECT  = "SELECT Nombre, Apellido, Saldo FROM  Clientes WHERE Codigo=" + codigo;
+
+
+
+        Cursor cursor = sql.rawQuery(SELECT,null);
+
+        if (cursor.moveToFirst()){
+
+            editTextNombre.setText(cursor.getString(1));
+            editTextApellido.setText(cursor.getString(2));
+            editTextsaldo.setText(cursor.getString(3));
+
+
+        }else {
+            Toast.makeText(this, "No se encontro el cliente", Toast.LENGTH_SHORT).show();
+            limpiar();
+
+        }
+
+        sql.close();
+        //while (cursor.moveToFirst())
 
 
 
