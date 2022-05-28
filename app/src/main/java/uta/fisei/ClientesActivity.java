@@ -83,6 +83,20 @@ public class ClientesActivity extends AppCompatActivity {
         //abrir la base de datos en modo escritura (select, DMl,DDL)
         SQLiteDatabase sql = clientesDataBase.getWritableDatabase();
 
+        //obtener el codigo para eliminar
+        String codigo = editTextCodigo.getText().toString();
+
+        //eliminar
+        int cantidad = sql.delete("Clientes", "Codigo="+codigo,null);
+
+        sql.close();
+        limpiar();
+
+        if (cantidad == 1 ){
+            Toast.makeText(this, "se elimino el cliente ", Toast.LENGTH_SHORT).show();
+        }else{
+            Toast.makeText(this, "No existe el cliente pare eliminar", Toast.LENGTH_SHORT).show();
+        }
 
     }
 
@@ -94,6 +108,30 @@ public class ClientesActivity extends AppCompatActivity {
         //abrir la base de datos en modo escritura (select, DMl,DDL)
         SQLiteDatabase sql = clientesDataBase.getWritableDatabase();
 
+        //obtener los datos para realizar el cambio por el regitro seleccionado
+
+        //obtener los datos ingresados en los controles
+        String codigo = editTextCodigo.getText().toString();
+        String nombre =  editTextNombre.getText().toString();
+        String  apellido = editTextApellido.getText().toString();
+        String saldo = editTextsaldo.getText().toString();
+
+        ContentValues valores = new ContentValues();
+        valores.put("Nombre",nombre);
+        valores.put("Apellido",apellido);
+        valores.put("Saldo",saldo);
+        valores.put("Codigo",codigo);
+
+        int cantidad = sql.update("Clientes",valores,"Codigo="+codigo,null);
+
+        sql.close();
+        limpiar();
+
+        if (cantidad == 1 ){
+            Toast.makeText(this, "Se modifico el cliente ", Toast.LENGTH_SHORT).show();
+        }else{
+            Toast.makeText(this, "No se pudo modificar el cliente", Toast.LENGTH_SHORT).show();
+        }
 
 
     }
